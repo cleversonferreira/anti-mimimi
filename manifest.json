@@ -1,9 +1,8 @@
 {
   "name": "Anti Mimimi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Removendo o mimimi do seu Facebook",
-  "homepage_url": "http://danharper.me",
   "background": {
     "scripts": [
       "background.js"
@@ -16,7 +15,7 @@
     "128": "mimimi.png" 
   },
   "browser_action": {
-    "default_title": "Kill Mimimi"
+    "default_title": "Remover Mimimi"
   },
   "permissions": [
     "https://*/*",
