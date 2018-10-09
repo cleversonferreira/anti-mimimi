@@ -10,8 +10,11 @@ var blacklist = [
 	'politica',
 	'fascista',
 	'fascista',
-	'Lula',
-	'Gleisi',
+	'fascismo',
+	'militarismo',
+	'lula',
+	'dilma',
+	'gleisi',
 	'petista',
 	'manifestantes',
 	'#elenao',
@@ -26,17 +29,16 @@ var blacklist = [
 	'17',
 ];
 
-function checkElements(element, index, array) {
-	blacklist.forEach(function(element2, index2, array2){
-		let word = element.textContent.toLowerCase();
-		let post = element.closest('._5jmm');
-		if(word.indexOf(element2) >= 0){
-			post.remove();
+function checkElements(post) {
+	blacklist.forEach(function(word){
+		if(post.textContent.toLowerCase().indexOf(word) >= 0){
+			post.closest('._5jmm').remove();
 		}
 	});
 }
 
-setInterval(function(){ 
-	let filds = document.querySelectorAll('[data-ad-preview]');
-	filds.forEach(checkElements);
-}, 1000);
+if (window.location.hostname === 'www.facebook.com'){
+	setInterval(function(){
+		document.querySelectorAll('[data-ad-preview]').forEach(checkElements);
+	}, 1000);
+}
