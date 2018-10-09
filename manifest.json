@@ -1,8 +1,9 @@
 {
   "name": "Anti Mimimi",
-  "version": "0.0.2",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "Removendo o mimimi do seu Facebook",
+  "homepage_url": "https://twitter.com/cleefranco",
   "background": {
     "scripts": [
       "background.js"
