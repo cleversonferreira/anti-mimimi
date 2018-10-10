@@ -1,15 +1,13 @@
-var blacklist = ['bolsonaro','haddad','ciro','marina','pt','psdb','psol','sulistas','politica','fascista','fascista','fascismo','militarismo','lula','dilma','gleisi','petista','manifestantes','#elenao','bancada','#elenunca','#haddahsim','amoedo','direita','esquerda','petralha','13','17'];
-
-function checkElements(post) {
-	blacklist.forEach(function(word){
-		if(post.textContent.toLowerCase().indexOf(word) >= 0){
-			post.closest('._5jmm').remove();
-		}
-	});
-}
+var blacklist = ['bolsonaro','bozonaro','haddad','bolsominion','bolsominions','ciro','amoedo','marina','lula','dilma','gleisi','pt','psdb','psol','mbl','sulistas','nordestinos','politica','fascistas','fascista','fascismo','militarismo','comunistas','socialista','socialismo','petista','manifestantes','#elenao','#elenão','#elejamais','#lulalivre','bancada','#elenunca','#haddahsim','direita','esquerda','petralha','cuba','13','17'];
 
 if (window.location.hostname === 'www.facebook.com'){
 	setInterval(function(){
-		document.querySelectorAll('[data-ad-preview]').forEach(checkElements);
+		document.querySelectorAll('[data-ad-preview]').forEach(function(post){
+			blacklist.forEach(function(word){
+				if(post.textContent.toLowerCase().indexOf(word) >= 0){
+					post.closest('._5jmm').remove();
+				}
+			});
+		});
 	}, 1000);
 }
